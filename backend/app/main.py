@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.modules.kpi_report.router import router as kpi_router
+from app.modules.monthly_kpi.router import router as monthly_kpi_router
 
 app = FastAPI(
     title="Prodoscore Custom Report Engine Center",
@@ -22,6 +23,7 @@ app.add_middleware(
 
 # Register Module Router Components
 app.include_router(kpi_router)
+app.include_router(monthly_kpi_router)
 
 
 @app.get("/health")
