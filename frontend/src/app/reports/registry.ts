@@ -5,11 +5,9 @@ export interface ReportMeta {
 }
 
 export const REPORTS: ReportMeta[] = [
-  // AI appends here on each migration
-  // Example:
-  // {
-  //   slug: 'monthly-kpi',
-  //   title: 'Monthly KPI Report',
-  //   description: 'Employee productivity scores and triage for the selected period.',
-  // },
+  {
+    slug: 'monthly-kpi-report',
+    title: 'Monthly KPI Report',
+    description: 'Employee productivity scores, performance triage, daily trends, and workforce analytics for the selected period.',
+  },
 ]

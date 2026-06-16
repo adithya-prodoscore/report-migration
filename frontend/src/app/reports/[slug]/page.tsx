@@ -1,8 +1,6 @@
 import { REPORTS } from '../registry'
 import { notFound } from 'next/navigation'
-
-// 1. Statically import your report components normally
-// import MonthlyKpiReport from '../components/monthly-kpi/MonthlyKpiReport'
+import { MonthlyKpiReport } from '../components/monthly-kpi-report'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -19,21 +17,28 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function ReportPage({ params, searchParams }: PageProps) {
   const { slug } = await params
-  // const resolvedSearchParams = await searchParams
+  const resolvedSearchParams = await searchParams
 
   // 2. Double-check the registry
   const report = REPORTS.find((r) => r.slug === slug)
   if (!report) notFound()
 
+  // Default to sample period if not provided
+  const domainId = resolvedSearchParams.domain_id || '9'
+  const startDate = resolvedSearchParams.start_date || '2026-05-01'
+  const endDate = resolvedSearchParams.end_date || '2026-05-29'
+
   // 3. Clear, explicit routing by slug
   switch (slug) {
-    case 'monthly-kpi':
-      return (<></>
-        // <MonthlyKpiReport
-        //   domainId={resolvedSearchParams.domain_id}
-        //   startDate={resolvedSearchParams.start_date}
-        //   endDate={resolvedSearchParams.end_date}
-        // />
+    case 'monthly-kpi-report':
+      return (
+        <div className="max-w-full mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          <MonthlyKpiReport
+            domainId={domainId}
+            startDate={startDate}
+            endDate={endDate}
+          />
+        </div>
       )
       
     // Whenever you or the AI add a new report, just drop another case statement here.
