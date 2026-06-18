@@ -20,4 +20,9 @@ export const REPORTS: ReportMeta[] = [
     title: 'Monthly KPI Report Tier 2',
     description: 'Full-fidelity Monthly KPI Report with production 6-gate working-day logic, role/manager/department cohort breakdowns, work-mode splits, and complete tool usage columns.',
   },
+  {
+    slug: 'monthly-kpi-report-tier-3',
+    title: 'Monthly KPI Report Tier 3',
+    description: 'Full end-to-end Monthly KPI Report (Pulse/Workforce/Data tabs) with production 6-gate working-day logic, triage engine, role/manager/department cohort breakdowns, work-mode splits, and complete tool usage columns.',
+  },
 ]
