@@ -1,4 +1,5 @@
-from typing import List, Dict, Optional
+from typing import Any, Dict, List, Optional
+
 from pydantic import BaseModel
 
 
@@ -155,7 +156,7 @@ class ToolMeta(BaseModel):
 class Config(BaseModel):
     tabs: Dict[str, bool]
     scorecard: Dict[str, bool]
-    dataLayout: Dict[str, bool]
+    dataLayout: Dict[str, Any]
     scoped_manager: Optional[str] = None
     hierarchy_depth: int
     report_title: str
