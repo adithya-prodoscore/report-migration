@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect } from 'react'
-import type { EmployeeRecordT1 } from '@/hooks/useMonthlyKpiReportTier1'
+import type { EmployeeRecordT1 } from '@/app/hooks/useMonthlyKpiReportTier1'
 
 interface EmployeeModalProps {
   employee: EmployeeRecordT1 | null
@@ -41,7 +41,6 @@ export function EmployeeModal({ employee, onClose }: EmployeeModalProps) {
 
   if (!employee) return null
 
-  // Group metrics by section
   const grouped: Record<string, typeof employee.metrics> = {}
   for (const m of employee.metrics) {
     if (!grouped[m.section]) grouped[m.section] = []
@@ -77,29 +76,19 @@ export function EmployeeModal({ employee, onClose }: EmployeeModalProps) {
         className="bg-kpi-white rounded-xl w-full max-w-[760px] shadow-shadow-xl overflow-hidden flex flex-col"
         style={{ maxHeight: 'calc(100vh - 80px)' }}
       >
-        {/* Header */}
         <div className="px-7 pt-6 pb-5 border-b border-kpi-gray-100 flex items-start justify-between gap-5 flex-shrink-0">
           <div className="flex-1 min-w-0">
-            <h2 id="modal-name" className="text-[22px] font-bold text-kpi-gray-950 leading-snug mb-1.5">
-              {employee.name}
-            </h2>
+            <h2 id="modal-name" className="text-[22px] font-bold text-kpi-gray-950 leading-snug mb-1.5">{employee.name}</h2>
             <p className="text-[13px] text-kpi-gray-600 leading-relaxed">
               {employee.role}
               <span className="mx-2 text-kpi-gray-300">·</span>
               {employee.dept}
-              {employee.manager && (
-                <><span className="mx-2 text-kpi-gray-300">·</span>Mgr: {employee.manager}</>
-              )}
+              {employee.manager && (<><span className="mx-2 text-kpi-gray-300">·</span>Mgr: {employee.manager}</>)}
             </p>
           </div>
-          {/* Score */}
-          <div className="flex-shrink-0 flex items-start gap-4">
-            <div className="text-right">
-              <div className={`text-[36px] font-extrabold leading-none tracking-tight ${TIER_SCORE_TEXT[tier]}`}>
-                {employee.score}
-              </div>
-              <div className="text-[11px] uppercase tracking-wider font-bold text-kpi-gray-500 mt-1">Score</div>
-            </div>
+          <div className="flex-shrink-0">
+            <div className={`text-[36px] font-extrabold leading-none tracking-tight ${TIER_SCORE_TEXT[tier]}`}>{employee.score}</div>
+            <div className="text-[11px] uppercase tracking-wider font-bold text-kpi-gray-500 mt-1">Score</div>
           </div>
           <button
             type="button"
@@ -107,18 +96,13 @@ export function EmployeeModal({ employee, onClose }: EmployeeModalProps) {
             aria-label="Close"
             onClick={onClose}
           >
-            <svg className="w-4 h-4 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" aria-hidden="true">
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
+            <svg className="w-4 h-4 stroke-current fill-none" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
           </button>
         </div>
-        {/* Body */}
         <div className="overflow-y-auto flex-1">
           {sections.map(sec => (
             <div key={sec} className="border-t border-kpi-gray-100 first:border-t-0">
-              <div className="px-7 py-3 text-[11px] uppercase tracking-wider font-bold text-kpi-gray-500 bg-kpi-gray-50">
-                {sec}
-              </div>
+              <div className="px-7 py-3 text-[11px] uppercase tracking-wider font-bold text-kpi-gray-500 bg-kpi-gray-50">{sec}</div>
               <table className="w-full border-collapse">
                 <thead>
                   <tr>
@@ -140,7 +124,6 @@ export function EmployeeModal({ employee, onClose }: EmployeeModalProps) {
             </div>
           ))}
         </div>
-        {/* Footer */}
         <div className="px-7 py-3.5 border-t border-kpi-gray-100 flex justify-end gap-3 flex-shrink-0 bg-kpi-gray-50">
           <button
             type="button"

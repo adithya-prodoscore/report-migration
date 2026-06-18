@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import type { EmployeeRecordT1 } from '@/hooks/useMonthlyKpiReportTier1'
+import type { EmployeeRecordT1 } from '@/app/hooks/useMonthlyKpiReportTier1'
 
 interface ProportionBarProps {
   employees: EmployeeRecordT1[]
