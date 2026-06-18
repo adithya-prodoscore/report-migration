@@ -47,6 +47,60 @@
   --color-mode-remote:       #0891b2;
   --color-mode-remote-bg:    #cffafe;
 
+  /* ---- KPI Report DS color system (from kpi_web_template.html) ---- */
+  /* These map the HTML CSS variables to Tailwind-consumable tokens.   */
+  /* Blue scale — used for score-high tier, trend color, link accents  */
+  --color-kpi-blue-50:   #F1F7FE;
+  --color-kpi-blue-100:  #E2EFFC;
+  --color-kpi-blue-200:  #BFDCF8;
+  --color-kpi-blue-300:  #86C1F3;
+  --color-kpi-blue-400:  #46A2EA;
+  --color-kpi-blue-500:  #1E86D9;
+  --color-kpi-blue-600:  #1068B9;
+  --color-kpi-blue-700:  #0F5495;
+  --color-kpi-blue-800:  #10487C;
+  --color-kpi-blue-900:  #133D67;
+  --color-kpi-blue-950:  #0D2744;
+  /* Red scale — used for score-critical tier, needs-attention, trend down */
+  --color-kpi-red-50:    #FEF2F2;
+  --color-kpi-red-100:   #FEE3E2;
+  --color-kpi-red-200:   #FFCBC9;
+  --color-kpi-red-300:   #FDA7A4;
+  --color-kpi-red-400:   #FA746F;
+  --color-kpi-red-500:   #F1433C;
+  --color-kpi-red-600:   #DF2A23;
+  --color-kpi-red-700:   #BB201A;
+  /* Yellow scale — used for inactive status */
+  --color-kpi-yellow-50:  #FBFDE9;
+  --color-kpi-yellow-100: #F7FCC5;
+  --color-kpi-yellow-500: #E4D20E;
+  --color-kpi-yellow-600: #BEA009;
+  --color-kpi-yellow-700: #9D780B;
+  /* Gray scale — used for monitor tier, borders, text */
+  --color-kpi-gray-50:   #F6F6F6;
+  --color-kpi-gray-100:  #E7E7E7;
+  --color-kpi-gray-200:  #D1D1D1;
+  --color-kpi-gray-300:  #B0B0B0;
+  --color-kpi-gray-400:  #888888;
+  --color-kpi-gray-500:  #6D6D6D;
+  --color-kpi-gray-600:  #5D5D5D;
+  --color-kpi-gray-700:  #4F4F4F;
+  --color-kpi-gray-800:  #494949;
+  --color-kpi-gray-900:  #3D3D3D;
+  --color-kpi-gray-950:  #262626;
+  /* Semantic KPI report tokens */
+  --color-kpi-screen-bg:      #FBFAFA;
+  --color-kpi-white:          #FEFEFE;
+  --color-kpi-tier-high:      #1E86DA;
+  --color-kpi-tier-high-pale: #EAF3FA;
+  --color-kpi-tier-monitor:   #494949;
+  --color-kpi-tier-monitor-pale: #ECECEC;
+  --color-kpi-tier-critical:  #F2433B;
+  --color-kpi-tier-critical-pale: #FDEDEA;
+  /* Green scale */
+  --color-kpi-green-500: #12D576;
+  --color-kpi-green-600: #09BE66;
+
   /* ---- Typography ---- */
   --font-family-primary:     'Geist', 'Inter', system-ui, sans-serif;
   --font-family-mono:        'Geist Mono', 'Fira Code', monospace;
