@@ -5,6 +5,7 @@ from app.modules.kpi_report.router import router as kpi_router
 from app.modules.monthly_kpi_report.router import router as monthly_kpi_router
 from app.modules.monthly_kpi_report_tier_1.router import router as monthly_kpi_report_tier_1_router
 from app.modules.monthly_kpi_report_tier_2.router import router as monthly_kpi_report_tier_2_router
+from app.modules.monthly_kpi_report_tier_3.router import router as monthly_kpi_report_tier_3_router
 
 app = FastAPI(
     title="Prodoscore Custom Report Engine Center",
@@ -28,6 +29,7 @@ app.include_router(kpi_router)
 app.include_router(monthly_kpi_router)
 app.include_router(monthly_kpi_report_tier_1_router)
 app.include_router(monthly_kpi_report_tier_2_router)
+app.include_router(monthly_kpi_report_tier_3_router)
 
 
 @app.get("/health")
