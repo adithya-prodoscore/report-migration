@@ -25,4 +25,9 @@ export const REPORTS: ReportMeta[] = [
     title: 'Monthly KPI Report Tier 3',
     description: 'Full end-to-end Monthly KPI Report (Pulse/Workforce/Data tabs) with production 6-gate working-day logic, triage engine, role/manager/department cohort breakdowns, work-mode splits, and complete tool usage columns.',
   },
+  {
+    slug: 'monthly-kpi-report-tier-4',
+    title: 'Monthly KPI Report Tier 4',
+    description: 'Production-parity Monthly KPI Report (Pulse/Workforce/Data tabs) with the complete 6-gate working-day logic, full triage cascade (Needs Attention / Inactive / Top Performers), role/manager/department cohort breakdowns, work-mode splits, and all tool usage columns sourced from live BigQuery.',
+  },
 ]
