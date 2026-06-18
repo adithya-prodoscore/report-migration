@@ -11,6 +11,11 @@ export const REPORTS: ReportMeta[] = [
     description: 'Employee productivity scores, performance triage, daily trends, and workforce analytics for the selected period.',
   },
   {
+    slug: 'monthly-kpi-report-tier-1',
+    title: 'Monthly KPI Report Tier 1',
+    description: 'Anchor KPI Report mirroring the Prodoscore website: per-employee SCORE, WORK HABITS, MEETINGS, TECH MODULES, and WEB BROWSER metrics with triage status for each employee.',
+  },
+  {
     slug: 'monthly-kpi-report-tier-2',
     title: 'Monthly KPI Report Tier 2',
     description: 'Full-fidelity Monthly KPI Report with production 6-gate working-day logic, role/manager/department cohort breakdowns, work-mode splits, and complete tool usage columns.',
