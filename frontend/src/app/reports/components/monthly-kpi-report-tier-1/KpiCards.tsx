@@ -1,7 +1,7 @@
 'use client'
 
 import { useMemo } from 'react'
-import type { EmployeeRecordT1 } from '@/hooks/useMonthlyKpiReportTier1'
+import type { EmployeeRecordT1 } from '@/app/hooks/useMonthlyKpiReportTier1'
 
 type Status = 'needs-attention' | 'inactive' | 'most-engaged' | 'on-track' | 'all'
 
