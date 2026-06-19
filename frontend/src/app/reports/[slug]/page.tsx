@@ -1,6 +1,7 @@
 import { REPORTS } from '../registry'
 import { notFound } from 'next/navigation'
 import { MonthlyKpiReport } from '../components/monthly-kpi-report'
+import { MonthlyKpiReportTier7Report } from '../components/monthly-kpi-report-tier-7/MonthlyKpiReportTier7Report'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -19,7 +20,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const { slug } = await params
   const resolvedSearchParams = await searchParams
 
-  // 2. Double-check the registry
+  // Double-check the registry
   const report = REPORTS.find((r) => r.slug === slug)
   if (!report) notFound()
 
@@ -28,7 +29,7 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
   const startDate = resolvedSearchParams.start_date || '2026-05-01'
   const endDate = resolvedSearchParams.end_date || '2026-05-29'
 
-  // 3. Clear, explicit routing by slug
+  // Clear, explicit routing by slug
   switch (slug) {
     case 'monthly-kpi-report':
       return (
@@ -40,7 +41,16 @@ export default async function ReportPage({ params, searchParams }: PageProps) {
           />
         </div>
       )
-      
+
+    case 'monthly-kpi-report-tier-7':
+      return (
+        <MonthlyKpiReportTier7Report
+          domainId={domainId}
+          startDate={startDate}
+          endDate={endDate}
+        />
+      )
+
     // Whenever you or the AI add a new report, just drop another case statement here.
     // case 'another-report':
     //   return <AnotherReportComponent ... />
